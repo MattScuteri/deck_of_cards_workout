@@ -60,17 +60,19 @@ int main() {
     string face_card;
     string exercise;
     
+    std::cout << "Welcome to the DECK OF CARDS WORKOUT!\n";
+
     std::cout << "Enter an exercise for Spades\n";
-    std::cin >> spades;
+    getline(cin, spades, '\n');
 
     std::cout << "Enter an exercise for Clubs\n";
-    std::cin >> clubs;
+    getline(cin, clubs, '\n');
 
     std::cout << "Enter an exercise for Hearts\n";
-    std::cin >> hearts;
+    getline(cin, hearts, '\n');
 
     std::cout << "Enter an exercise for Diamonds\n";
-    std::cin >> diamonds;
+    getline(cin, diamonds, '\n');
     
     srand(time(0));
     Deck new_card;
@@ -118,16 +120,11 @@ int main() {
 
         if(new_card.num > 10) {
             std::cout << face_card << " of " << suit_out << "\n";
-            std::cout << "Do " << new_card.num << " " << exercise << "\n";
+            std::cout << "Do " << new_card.num << " " << exercise << "!\n";
         } else {
             std::cout << new_card.num << " of " << suit_out << "\n";
-            std::cout << "Do " << new_card.num << " " << exercise << "\n";
+            std::cout << "Do " << new_card.num << " " << exercise << "!\n";
         }
-
-        // this loop checks to see that cards are being inserted into vector - to delete before finishing program
-        for (int i = 0; i < new_card.pulled_cards.size(); i++) {
-		    std::cout << new_card.pulled_cards.at(i) << ' \n';
-	    }
         
         string cont_exercise;
 
@@ -141,4 +138,6 @@ int main() {
             break;
         }
     }
+
+    std::cout << "You completed the Deck of Cards workout!";
 }
