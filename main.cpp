@@ -60,17 +60,17 @@ int main() {
     string face_card;
     string exercise;
     
-    // std::cout << "Enter an exercise for Spades\n";
-    // std::cin >> spades;
+    std::cout << "Enter an exercise for Spades\n";
+    std::cin >> spades;
 
-    // std::cout << "Enter an exercise for Clubs\n";
-    // std::cin >> clubs;
+    std::cout << "Enter an exercise for Clubs\n";
+    std::cin >> clubs;
 
-    // std::cout << "Enter an exercise for Hearts\n";
-    // std::cin >> hearts;
+    std::cout << "Enter an exercise for Hearts\n";
+    std::cin >> hearts;
 
-    // std::cout << "Enter an exercise for Diamonds\n";
-    // std::cin >> diamonds;
+    std::cout << "Enter an exercise for Diamonds\n";
+    std::cin >> diamonds;
     
     srand(time(0));
     Deck new_card;
@@ -124,20 +124,21 @@ int main() {
             std::cout << "Do " << new_card.num << " " << exercise << "s\n";
         }
 
-        string cont_exercise;
-        std::cout << "Did you do it? Press Y to continue or Q to quit";
-        std::cin >> cont_exercise;
-
-        if(cont_exercise == "Y") {
-            continue;
-        } else if(cont_exercise == "Q") {
-            std::cout << "Nice going!   ....quitter\n";
-            break;
-        }
-
         // this loop checks to see that cards are being inserted into vector - to delete before finishing program
         for (int i = 0; i < new_card.pulled_cards.size(); i++) {
 		    std::cout << new_card.pulled_cards.at(i) << ' ';
 	    }
+        
+        string cont_exercise;
+
+        std::cout << "Did you do it? Press Y to continue or Q to quit\n";
+        std::cin >> cont_exercise;
+
+        if(cont_exercise == "y") {
+            continue;
+        } else if(cont_exercise == "q") {
+            std::cout << "Nice going!   ....quitter\n";
+            break;
+        }
     }
 }
