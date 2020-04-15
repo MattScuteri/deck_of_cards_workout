@@ -31,9 +31,9 @@ void Deck::build_card() {
         num = build_num;
         suit = build_suit;
     } 
-    // else {
-    //     build_card();
-    // }
+    else {
+         build_card();
+    }
 }
 
 bool check_deck(string card, const std::vector<string> pulled_array) {
@@ -118,15 +118,15 @@ int main() {
 
         if(new_card.num > 10) {
             std::cout << face_card << " of " << suit_out << "\n";
-            std::cout << "Do " << new_card.num << " " << exercise << "s\n";
+            std::cout << "Do " << new_card.num << " " << exercise << "\n";
         } else {
             std::cout << new_card.num << " of " << suit_out << "\n";
-            std::cout << "Do " << new_card.num << " " << exercise << "s\n";
+            std::cout << "Do " << new_card.num << " " << exercise << "\n";
         }
 
         // this loop checks to see that cards are being inserted into vector - to delete before finishing program
         for (int i = 0; i < new_card.pulled_cards.size(); i++) {
-		    std::cout << new_card.pulled_cards.at(i) << ' ';
+		    std::cout << new_card.pulled_cards.at(i) << ' \n';
 	    }
         
         string cont_exercise;
