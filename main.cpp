@@ -58,9 +58,8 @@ int main() {
     int build_suit;
     string suit_out;
     string face_card;
+    string exercise;
     
-
-
     // std::cout << "Enter an exercise for Spades\n";
     // std::cin >> spades;
 
@@ -82,15 +81,19 @@ int main() {
         switch(new_card.suit) {
             case 1:
                 suit_out = "Spades";
+                exercise = spades;
                 break;
             case 2:
                 suit_out = "Clubs";
+                exercise = clubs;
                 break;
             case 3:
                 suit_out = "Hearts";
+                exercise = hearts;
                 break;
             case 4:
                 suit_out = "Diamonds";
+                exercise = diamonds;
                 break;
             default:
                 suit_out = "error!";
@@ -115,8 +118,21 @@ int main() {
 
         if(new_card.num > 10) {
             std::cout << face_card << " of " << suit_out << "\n";
+            std::cout << "Do " << new_card.num << " " << exercise << "s\n";
         } else {
             std::cout << new_card.num << " of " << suit_out << "\n";
+            std::cout << "Do " << new_card.num << " " << exercise << "s\n";
+        }
+
+        string cont_exercise;
+        std::cout << "Did you do it? Press Y to continue or Q to quit";
+        std::cin >> cont_exercise;
+
+        if(cont_exercise == "Y") {
+            continue;
+        } else if(cont_exercise == "Q") {
+            std::cout << "Nice going!   ....quitter\n";
+            break;
         }
 
         // this loop checks to see that cards are being inserted into vector - to delete before finishing program
