@@ -139,10 +139,5 @@ int main() {
         for (int i = 0; i < new_card.pulled_cards.size(); i++) {
 		    std::cout << new_card.pulled_cards.at(i) << ' ';
 	    }
-
-        //create empty vector to hold 52 cards || map with key-value pairs
-        //use while loop to check that vector stil has less than 52 cards
-        //will need to run verification that all cards in vector are unique
-        // return number and name of exercises
     }
 }
