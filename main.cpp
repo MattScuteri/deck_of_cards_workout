@@ -59,6 +59,7 @@ int main() {
     string suit_out;
     string face_card;
     string exercise;
+    int card_num = 1;
     
     std::cout << "Welcome to the DECK OF CARDS WORKOUT!\n";
 
@@ -118,6 +119,8 @@ int main() {
                 face_card = "error!";
         }
 
+        std::cout << card_num << " out of 52!\n";
+
         if(new_card.num > 10) {
             std::cout << face_card << " of " << suit_out << "\n";
             std::cout << "Do " << new_card.num << " " << exercise << "!\n";
@@ -132,6 +135,7 @@ int main() {
         std::cin >> cont_exercise;
 
         if(cont_exercise == "y") {
+            card_num++;
             continue;
         } else if(cont_exercise == "q") {
             std::cout << "Nice going!   ....quitter\n";
